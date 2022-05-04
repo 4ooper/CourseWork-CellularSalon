@@ -1,0 +1,269 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{A192649F-0989-4E98-80B2-8FBD44314E8D}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>CellularSalon</RootNamespace>
+    <AssemblyName>CellularSalon</AssemblyName>
+    <TargetFrameworkVersion>v4.7.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <Deterministic>true</Deterministic>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="AdminPanels\AboutPhoneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\AboutPhoneControl.Designer.cs">
+      <DependentUpon>AboutPhoneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\AboutSalerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\AboutSalerControl.Designer.cs">
+      <DependentUpon>AboutSalerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\AcceptOrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\AcceptOrderControl.Designer.cs">
+      <DependentUpon>AcceptOrderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\addPhoneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\addPhoneControl.Designer.cs">
+      <DependentUpon>addPhoneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\changePhoneDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\changePhoneDataControl.Designer.cs">
+      <DependentUpon>changePhoneDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\changeUserDataControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\changeUserDataControl.Designer.cs">
+      <DependentUpon>changeUserDataControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\chooseUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\chooseUserControl.Designer.cs">
+      <DependentUpon>chooseUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\FindPhoneControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\FindPhoneControl.Designer.cs">
+      <DependentUpon>FindPhoneControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\FindSalerControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\FindSalerControl.Designer.cs">
+      <DependentUpon>FindSalerControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\ListOfPhonesControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\ListOfPhonesControl.Designer.cs">
+      <DependentUpon>ListOfPhonesControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\OrderControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\OrderControl.Designer.cs">
+      <DependentUpon>OrderControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\ReportsControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\ReportsControl.Designer.cs">
+      <DependentUpon>ReportsControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\SaleControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\SaleControl.Designer.cs">
+      <DependentUpon>SaleControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\UserPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\UserPanel.Designer.cs">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="AdminPanels\FindUserControl.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="AdminPanels\FindUserControl.Designer.cs">
+      <DependentUpon>FindUserControl.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AboutPhoneForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutPhoneForm.Designer.cs">
+      <DependentUpon>AboutPhoneForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AdminPanelForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AdminPanelForm.Designer.cs">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\AuthForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AuthForm.Designer.cs">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\MainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\MainForm.Designer.cs">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\RegisterForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\RegisterForm.Designer.cs">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="AdminPanels\AboutPhoneControl.resx">
+      <DependentUpon>AboutPhoneControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\AboutSalerControl.resx">
+      <DependentUpon>AboutSalerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\AcceptOrderControl.resx">
+      <DependentUpon>AcceptOrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\addPhoneControl.resx">
+      <DependentUpon>addPhoneControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\changePhoneDataControl.resx">
+      <DependentUpon>changePhoneDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\changeUserDataControl.resx">
+      <DependentUpon>changeUserDataControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\chooseUserControl.resx">
+      <DependentUpon>chooseUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\FindPhoneControl.resx">
+      <DependentUpon>FindPhoneControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\FindSalerControl.resx">
+      <DependentUpon>FindSalerControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\ListOfPhonesControl.resx">
+      <DependentUpon>ListOfPhonesControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\OrderControl.resx">
+      <DependentUpon>OrderControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\ReportsControl.resx">
+      <DependentUpon>ReportsControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\SaleControl.resx">
+      <DependentUpon>SaleControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\UserPanel.resx">
+      <DependentUpon>UserPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="AdminPanels\FindUserControl.resx">
+      <DependentUpon>FindUserControl.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AboutPhoneForm.resx">
+      <DependentUpon>AboutPhoneForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AdminPanelForm.resx">
+      <DependentUpon>AdminPanelForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\AuthForm.resx">
+      <DependentUpon>AuthForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\MainForm.resx">
+      <DependentUpon>MainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\RegisterForm.resx">
+      <DependentUpon>RegisterForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Functions\Functions.csproj">
+      <Project>{28555486-5a47-47a6-ae00-8f489ae82685}</Project>
+      <Name>Functions</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{92effb7a-b951-4792-aaee-ab2424a33e28}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Parser\Parser.csproj">
+      <Project>{cb4e323a-7fcb-45f4-9eff-9bf768da910e}</Project>
+      <Name>Parser</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup />
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
