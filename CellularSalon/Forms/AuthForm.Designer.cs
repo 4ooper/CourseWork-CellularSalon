@@ -33,10 +33,10 @@
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.passwordBox = new System.Windows.Forms.TextBox();
-            this.regButton = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.SingInButton = new System.Windows.Forms.Button();
+            this.GuessButton = new System.Windows.Forms.Button();
             this.label4 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
+            this.RegisterButton = new System.Windows.Forms.Button();
             this.exitButton = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -56,7 +56,7 @@
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(371, 20);
             this.emailBox.TabIndex = 1;
-            this.emailBox.TextChanged += new System.EventHandler(this.authDataChanged);
+            this.emailBox.TextChanged += new System.EventHandler(this.AuthDataChanged);
             // 
             // label2
             // 
@@ -85,27 +85,27 @@
             this.passwordBox.Size = new System.Drawing.Size(344, 20);
             this.passwordBox.TabIndex = 3;
             this.passwordBox.UseSystemPasswordChar = true;
-            this.passwordBox.TextChanged += new System.EventHandler(this.authDataChanged);
+            this.passwordBox.TextChanged += new System.EventHandler(this.AuthDataChanged);
             // 
-            // regButton
+            // SingInButton
             // 
-            this.regButton.Location = new System.Drawing.Point(12, 208);
-            this.regButton.Name = "regButton";
-            this.regButton.Size = new System.Drawing.Size(156, 50);
-            this.regButton.TabIndex = 5;
-            this.regButton.Text = "Войти";
-            this.regButton.UseVisualStyleBackColor = true;
-            this.regButton.Click += new System.EventHandler(this.regButton_Click);
+            this.SingInButton.Location = new System.Drawing.Point(12, 208);
+            this.SingInButton.Name = "SingInButton";
+            this.SingInButton.Size = new System.Drawing.Size(156, 50);
+            this.SingInButton.TabIndex = 5;
+            this.SingInButton.Text = "Войти";
+            this.SingInButton.UseVisualStyleBackColor = true;
+            this.SingInButton.Click += new System.EventHandler(this.SingInButton_Click);
             // 
-            // button2
+            // GuessButton
             // 
-            this.button2.Location = new System.Drawing.Point(294, 208);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(156, 50);
-            this.button2.TabIndex = 6;
-            this.button2.Text = "Продолжить как гость";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.GuessButton.Location = new System.Drawing.Point(294, 208);
+            this.GuessButton.Name = "GuessButton";
+            this.GuessButton.Size = new System.Drawing.Size(156, 50);
+            this.GuessButton.TabIndex = 6;
+            this.GuessButton.Text = "Продолжить как гость";
+            this.GuessButton.UseVisualStyleBackColor = true;
+            this.GuessButton.Click += new System.EventHandler(this.GuessButton_Click);
             // 
             // label4
             // 
@@ -119,15 +119,15 @@
             this.label4.TabIndex = 7;
             this.label4.Text = "Некорректные данные";
             // 
-            // button1
+            // RegisterButton
             // 
-            this.button1.Location = new System.Drawing.Point(12, 273);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(438, 49);
-            this.button1.TabIndex = 8;
-            this.button1.Text = "Зарегистрироваться";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.RegisterButton.Location = new System.Drawing.Point(12, 273);
+            this.RegisterButton.Name = "RegisterButton";
+            this.RegisterButton.Size = new System.Drawing.Size(438, 49);
+            this.RegisterButton.TabIndex = 8;
+            this.RegisterButton.Text = "Зарегистрироваться";
+            this.RegisterButton.UseVisualStyleBackColor = true;
+            this.RegisterButton.Click += new System.EventHandler(this.RegisterButton_Click);
             // 
             // exitButton
             // 
@@ -145,10 +145,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(462, 390);
             this.Controls.Add(this.exitButton);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.RegisterButton);
             this.Controls.Add(this.label4);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.regButton);
+            this.Controls.Add(this.GuessButton);
+            this.Controls.Add(this.SingInButton);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.passwordBox);
             this.Controls.Add(this.label2);
@@ -168,10 +168,10 @@
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.TextBox passwordBox;
-        private System.Windows.Forms.Button regButton;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button SingInButton;
+        private System.Windows.Forms.Button GuessButton;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button RegisterButton;
         private System.Windows.Forms.Button exitButton;
     }
 }

@@ -1,15 +1,9 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Parser;
-using Functions;
 using Models;
+using BLL.Auth;
+using BLL.ValidationEnterData;
 
 namespace CellularSalon.Forms
 {
@@ -19,59 +13,46 @@ namespace CellularSalon.Forms
         {
             InitializeComponent();
             label4.Visible = false;
-            regButton.Enabled = false;
+            SingInButton.Enabled = false;
             if(form != null)
             {
                 form.Hide();
             }
         }
 
-        private void authDataChanged(object sender, EventArgs e)
+        private void AuthDataChanged(object sender, EventArgs e)
         {
-            if (Functions.Auth.AuthForm.EmailValidation(emailBox.Text) == true && passwordBox.Text.Count() > 4)
+            if (Validation.ParseEmail(emailBox.Text) == true && passwordBox.Text.Count() > 4)
             {
                 label4.Visible = false;
-                regButton.Enabled = true;
+                SingInButton.Enabled = true;
             }
             else
             {
                 label4.Visible = true;
-                regButton.Enabled = false;
+                SingInButton.Enabled = false;
             }
         }
 
-        private void regButton_Click(object sender, EventArgs e)
+        private void SingInButton_Click(object sender, EventArgs e)
         {
-            try
+            if(Validation.IsUserExist(emailBox.Text))
             {
-                if (passwordBox.Text.Count() == 0)
-                {
-                    throw new Exception("No password");
-                }
-
-                if (Functions.Auth.AuthForm.isDataExist(emailBox.Text, passwordBox.Text))
-                {
-                    User item = Functions.Auth.AuthForm.getItem(emailBox.Text, passwordBox.Text);
-                    new MainForm(this, item).Show();
-                }
-                else
-                {
-                    throw new Exception("Not find data");
-                }
+                User item = AuthForm.getItem(emailBox.Text, passwordBox.Text);
+                new MainForm(this, item).Show();
             }
-            catch(Exception ex)
+            else
             {
-                MessageBox.Show(ex.Message);
-                MessageBox.Show("Неправильные данные!", "Ошибка!");
+                MessageBox.Show("Пользователь не найден!\nПроверьте данные для входа", "Ошибка!");
             }
-}
+        }
 
-        private void button2_Click(object sender, EventArgs e)
+        private void GuessButton_Click(object sender, EventArgs e)
         {
             new MainForm(this).Show();
         }
 
-        private void button1_Click(object sender, EventArgs e)
+        private void RegisterButton_Click(object sender, EventArgs e)
         {
             new RegisterForm(this).Show();
         }

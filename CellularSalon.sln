@@ -5,7 +5,7 @@ VisualStudioVersion = 17.1.32228.430
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CellularSalon", "CellularSalon\CellularSalon.csproj", "{A192649F-0989-4E98-80B2-8FBD44314E8D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Functions", "Functions\Functions.csproj", "{28555486-5A47-47A6-AE00-8F489AE82685}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Business Logic Layer", "Functions\Business Logic Layer.csproj", "{28555486-5A47-47A6-AE00-8F489AE82685}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Models", "Models\Models.csproj", "{92EFFB7A-B951-4792-AAEE-AB2424A33E28}"
 EndProject

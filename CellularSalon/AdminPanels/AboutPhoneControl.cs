@@ -9,6 +9,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models.PhoneClasses;
+using BLL.CarouselPicture;
 
 namespace CellularSalon.AdminPanels
 {
@@ -39,30 +40,12 @@ namespace CellularSalon.AdminPanels
 
         private void nextPicButton_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(pictureBox1.Tag) + 1 < phone.normalPhotoURL.Count())
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[Convert.ToInt32(pictureBox1.Tag) + 1])));
-                pictureBox1.Tag = Convert.ToInt32(pictureBox1.Tag) + 1;
-            }
-            else
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[0])));
-                pictureBox1.Tag = 0;
-            }
+            Carousel.PicButtonClick(this.pictureBox1, phone, true);
         }
 
         private void PrevPIcButton_Click(object sender, EventArgs e)
         {
-            if (Convert.ToInt32(pictureBox1.Tag) - 1 >= 0)
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[Convert.ToInt32(pictureBox1.Tag) - 1])));
-                pictureBox1.Tag = Convert.ToInt32(pictureBox1.Tag) - 1;
-            }
-            else
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[phone.normalPhotoURL.Count() - 1])));
-                pictureBox1.Tag = phone.normalPhotoURL.Count() - 1;
-            }
+            Carousel.PicButtonClick(this.pictureBox1, phone, false);
         }
     }
 }

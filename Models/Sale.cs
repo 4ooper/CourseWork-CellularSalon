@@ -11,26 +11,28 @@ namespace Models
 {
     public class Sale
     {
-        public PhoneClasses.Phone phone;
-        public User client;
-        public User employee;
+        public string phoneName;
+        public string clientEmail;
+        public string employeeEmail;
         public DateTime dateTime;
         public string linkToHtml;
+        public int price;
 
         public Sale() { }
-        public Sale(PhoneClasses.Phone phone, User client, User employee)
+        public Sale(string phoneName, string clientEmail, string employeeEmail, int price)
         {
-            this.phone = phone;
-            this.client = client;
-            this.employee = employee;
+            this.phoneName = phoneName;
+            this.clientEmail = clientEmail;
+            this.employeeEmail = employeeEmail;
             this.dateTime = DateTime.Now;
+            this.price = price;
             this.linkToHtml = createHtml();
         }
 
-        public string createHtml()
+        private string createHtml()
         {
 
-            string path = $"..\\..\\..\\SaleReports\\{this.phone.name} {this.dateTime.ToShortDateString()}-{this.dateTime.Millisecond}.html";
+            string path = $"..\\..\\..\\SaleReports\\{this.phoneName} {this.dateTime.ToShortDateString()}-{this.dateTime.Millisecond}.html";
 
             string html = "<!DOCTYPE html>" +
                 "<html lang='ru'>" +
@@ -38,14 +40,14 @@ namespace Models
                 "<meta charset='UTF - 8'>" +
                 "<meta http-equiv='X - UA - Compatible' content='IE = edge'>" +
                 "<meta name='viewport' content='width = device - width, initial - scale = 1.0'>" +
-                $"<title>{this.phone.name}</title>" +
+                $"<title>{this.phoneName}</title>" +
                 "</head>" +
                 "<body>" +
-                $"<h1>Телефон: {this.phone.name}</h1>" +
-                $"<p>Покупатель: {this.client.name}</p>" +
-                $"<p>Продавец: {this.employee.name}</p>" +
+                $"<h1>Телефон: {this.phoneName}</h1>" +
+                $"<p>Покупатель: {this.clientEmail}</p>" +
+                $"<p>Продавец: {this.employeeEmail}</p>" +
                 $"<p>Дата продажи: {this.dateTime.ToShortDateString()}</p>" +
-                $"<p>Цена: {this.phone.totalPrice()}р</p>" +
+                $"<p>Цена: {this.price}р</p>" +
                 "</body>" +
                 "</html>";
 

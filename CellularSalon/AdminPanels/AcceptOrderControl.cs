@@ -51,7 +51,7 @@ namespace CellularSalon.AdminPanels
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
-            Sale sale = new Sale(phone, client, adminUser);
+            Sale sale = new Sale(phone.name, client.email, adminUser.email, phone.totalPrice());
             List<Sale> sales = SaleParser.sales;
             sales.Add(sale);
             SaleParser.writeData(sales);

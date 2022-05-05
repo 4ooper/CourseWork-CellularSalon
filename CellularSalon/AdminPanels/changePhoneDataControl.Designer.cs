@@ -36,8 +36,8 @@
             this.label3 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button1 = new System.Windows.Forms.Button();
+            this.nextPhotoButton = new System.Windows.Forms.Button();
+            this.prevPhotoButton = new System.Windows.Forms.Button();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.nameBox = new System.Windows.Forms.TextBox();
             this.screenBox = new System.Windows.Forms.TextBox();
@@ -141,25 +141,25 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "Основные характеристики";
             // 
-            // button2
+            // nextPhotoButton
             // 
-            this.button2.Location = new System.Drawing.Point(183, 256);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 20;
-            this.button2.Text = "Next Image";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.nextPhotoButton.Location = new System.Drawing.Point(183, 256);
+            this.nextPhotoButton.Name = "nextPhotoButton";
+            this.nextPhotoButton.Size = new System.Drawing.Size(75, 23);
+            this.nextPhotoButton.TabIndex = 20;
+            this.nextPhotoButton.Text = "Next Image";
+            this.nextPhotoButton.UseVisualStyleBackColor = true;
+            this.nextPhotoButton.Click += new System.EventHandler(this.NextPhotoButton_Click);
             // 
-            // button1
+            // prevPhotoButton
             // 
-            this.button1.Location = new System.Drawing.Point(4, 256);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 19;
-            this.button1.Text = "Back image";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.prevPhotoButton.Location = new System.Drawing.Point(4, 256);
+            this.prevPhotoButton.Name = "prevPhotoButton";
+            this.prevPhotoButton.Size = new System.Drawing.Size(75, 23);
+            this.prevPhotoButton.TabIndex = 19;
+            this.prevPhotoButton.Text = "Back image";
+            this.prevPhotoButton.UseVisualStyleBackColor = true;
+            this.prevPhotoButton.Click += new System.EventHandler(this.PrevPhotoButton_Click);
             // 
             // pictureBox1
             // 
@@ -366,8 +366,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nextPhotoButton);
+            this.Controls.Add(this.prevPhotoButton);
             this.Controls.Add(this.pictureBox1);
             this.Name = "changePhoneDataControl";
             this.Size = new System.Drawing.Size(584, 485);
@@ -386,8 +386,8 @@
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button nextPhotoButton;
+        private System.Windows.Forms.Button prevPhotoButton;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TextBox nameBox;
         private System.Windows.Forms.TextBox screenBox;

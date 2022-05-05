@@ -1,14 +1,8 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Functions.Registration;
+using BLL.Registration;
 using Models;
+using BLL.ValidationEnterData;
 
 namespace CellularSalon.Forms
 {
@@ -21,38 +15,33 @@ namespace CellularSalon.Forms
             form.Hide();
         }
 
-        private void backButton_Click(object sender, EventArgs e)
+        private void BackButton_Click(object sender, EventArgs e)
         {
             new authForm(this).Show();
         }
 
-        private void parseFields(object sender, EventArgs e)
+        private void ParseFields(object sender, EventArgs e)
         {
-            if(Registatration.parseFields(nameBox.Text, passwordBox.Text, emailBox.Text))
-            {
-                regButton.Enabled = true;
-            }
-            else
-            {
-                regButton.Enabled = false;
-            }
+            _ = Registatration.ParseFields(nameBox.Text, passwordBox.Text, emailBox.Text) ? 
+                regButton.Enabled = true : regButton.Enabled = false;
         }
 
-        private void regButton_Click(object sender, EventArgs e)
+        private void RegButton_Click(object sender, EventArgs e)
         {
-            User employee = new User(emailBox.Text, passwordBox.Text, nameBox.Text, "Пользователь");
             try
             {
-                if (Registatration.isUserExist(employee))
+                if (!Validation.IsUserExist(emailBox.Text))
                 {
-                    if (Registatration.createUser(employee))
+                    User employee = new User(emailBox.Text, passwordBox.Text, nameBox.Text, "Пользователь");
+                    if (Registatration.CreateUser(employee))
                     {
-                        MessageBox.Show("Success");
+                        MessageBox.Show("Вы успешно зарегистрировались!");
                         new MainForm(this, employee).Show();
                     }
                     else
                     {
-                        MessageBox.Show("Something went wrong!");
+                        MessageBox.Show("На данный момент регистрастрация невозможна!\n" +
+                            "Если ошибка повториться обратитесь к администратору.","Ошибка");
                     }
                 }
                 else

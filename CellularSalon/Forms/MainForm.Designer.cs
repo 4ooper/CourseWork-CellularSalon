@@ -103,7 +103,7 @@
             this.adminPanelButton.TabIndex = 5;
             this.adminPanelButton.Text = "Админ-панель";
             this.adminPanelButton.UseVisualStyleBackColor = true;
-            this.adminPanelButton.Click += new System.EventHandler(this.adminPanelButton_Click);
+            this.adminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
             // logOutButton
             // 
@@ -113,7 +113,7 @@
             this.logOutButton.TabIndex = 4;
             this.logOutButton.Text = "Выйти";
             this.logOutButton.UseVisualStyleBackColor = true;
-            this.logOutButton.Click += new System.EventHandler(this.logOutButton_Click);
+            this.logOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // mainPanel
             // 
@@ -131,7 +131,7 @@
             this.closeButton.TabIndex = 6;
             this.closeButton.Text = "Завершить работу";
             this.closeButton.UseVisualStyleBackColor = true;
-            this.closeButton.Click += new System.EventHandler(this.closeButton_Click);
+            this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // MainForm
             // 

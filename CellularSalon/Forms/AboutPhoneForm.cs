@@ -8,50 +8,25 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Models.PhoneClasses;
 using Models;
 using Parser;
+using BLL.AboutPhoneForm;
+using BLL.CarouselPicture;
 
 namespace CellularSalon.Forms
 {
     public partial class AboutPhoneForm : Form
     {
-        private Models.PhoneClasses.Phone phone;
+        private Phone phone;
         private User user;
-        public AboutPhoneForm(Form form, Models.PhoneClasses.Phone item, User user = null)
+        public AboutPhoneForm(Form form, Phone item, User user = null)
         {
             InitializeComponent();
             form.Hide();
             phone = item;
             this.user = user;
             bindFields();
-        }
-
-        private void button2_Click(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(pictureBox1.Tag) + 1 < phone.normalPhotoURL.Count())
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[Convert.ToInt32(pictureBox1.Tag) + 1])));
-                pictureBox1.Tag = Convert.ToInt32(pictureBox1.Tag) + 1;
-            }
-            else
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[0])));
-                pictureBox1.Tag = 0;
-            }
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            if (Convert.ToInt32(pictureBox1.Tag) - 1 >= 0)
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[Convert.ToInt32(pictureBox1.Tag) - 1])));
-                pictureBox1.Tag = Convert.ToInt32(pictureBox1.Tag) - 1;
-            }
-            else
-            {
-                pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[phone.normalPhotoURL.Count() - 1])));
-                pictureBox1.Tag = phone.normalPhotoURL.Count() - 1;
-            }
         }
 
         private void bindFields()
@@ -66,10 +41,20 @@ namespace CellularSalon.Forms
             cameraLabel.Text = phone.features.camera;
             pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[0])));
             createSaleButton.Enabled = phone.count > 0 ? true : false;
-            if(createSaleButton.Enabled == false)
+            if (createSaleButton.Enabled == false)
             {
                 createSaleButton.Text = "Товара нет в наличии!";
             }
+        }
+
+        private void NextPicButton_Click(object sender, EventArgs e)
+        {
+            Carousel.PicButtonClick(this.pictureBox1, phone, true);
+        }
+
+        private void PrevPicButton_Click(object sender, EventArgs e)
+        {
+            Carousel.PicButtonClick(this.pictureBox1, phone, false);
         }
 
         private void backButton_Click(object sender, EventArgs e)
@@ -79,17 +64,13 @@ namespace CellularSalon.Forms
 
         private void createSaleButton_Click(object sender, EventArgs e)
         {
-            if(user == null)
+            if (AboutPhoneBLL.CreateSale(user, phone))
             {
-                MessageBox.Show("Необходимо зарегистрироваться для заказа.");
-                new RegisterForm(this).Show();
+                new MainForm(this, user).Show();
             }
             else
             {
-                Order order = new Order(user, phone, DateTime.Now);
-                OrdersParser.createNode(order);
-                MessageBox.Show("Ваш заказ отправлен. Продавец свяжется с Вами по e-mail");
-                new MainForm(this, user).Show();
+                new RegisterForm(this).Show();
             }
         }
     }

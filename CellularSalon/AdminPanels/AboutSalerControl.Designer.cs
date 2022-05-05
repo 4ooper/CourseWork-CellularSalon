@@ -94,7 +94,6 @@
             this.Controls.Add(this.nameLabel);
             this.Name = "AboutSalerControl";
             this.Size = new System.Drawing.Size(593, 485);
-            this.Load += new System.EventHandler(this.AboutSalerControl_Load);
             this.ResumeLayout(false);
             this.PerformLayout();
 

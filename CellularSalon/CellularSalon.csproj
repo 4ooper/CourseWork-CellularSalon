@@ -251,9 +251,9 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <ProjectReference Include="..\Functions\Functions.csproj">
+    <ProjectReference Include="..\Functions\Business Logic Layer.csproj">
       <Project>{28555486-5a47-47a6-ae00-8f489ae82685}</Project>
-      <Name>Functions</Name>
+      <Name>Business Logic Layer</Name>
     </ProjectReference>
     <ProjectReference Include="..\Models\Models.csproj">
       <Project>{92effb7a-b951-4792-aaee-ab2424a33e28}</Project>

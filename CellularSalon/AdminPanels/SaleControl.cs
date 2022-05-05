@@ -28,7 +28,7 @@ namespace CellularSalon.AdminPanels
         {
             Phone phone = PhoneParser.phones.First(item => item.name == phonesBox.SelectedItem.ToString());
             User client = UserParser.employees.First(item => item.name == usersBox.SelectedItem.ToString());
-            Sale sale = new Sale(phone, client, user);
+            Sale sale = new Sale(phone.name, client.email, user.email, phone.totalPrice());
             List<Sale> sales = SaleParser.sales;
             sales.Add(sale);
             SaleParser.writeData(sales);

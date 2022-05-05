@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using Models;
 using Parser;
 using Models.PhoneClasses;
+using BLL.UIGenerator;
 
 namespace CellularSalon.AdminPanels
 {
@@ -26,42 +27,7 @@ namespace CellularSalon.AdminPanels
         private void showOrders()
         {
             panel1.Controls.Clear();
-
-            List<Order> orders = OrdersParser.orders;
-
-            int endX = 254;
-            int hX = 120;
-            int hY = 55;
-            int x = 0;
-            int y = 0;
-            foreach (Order order in orders)
-            {
-                if(x + 120 > endX)
-                {
-                    x = 0;
-                    y += hY + 20;
-                }
-                Panel panel = new Panel();
-                panel.Size = new Size(hX, hY);
-                panel.Location = new Point(x, y);
-                panel1.Controls.Add(panel);
-                Label label = new Label();
-                label.Text = order.phone.name;
-                label.Parent = panel;
-                label.Location = new Point(0,0);
-                label.Size = new Size(120, 13);
-                panel.Controls.Add(label);
-                Button button = new Button
-                {
-                    Text = "Подробнее",
-                    Tag = order,
-                    Size = new Size(114, 30),
-                    Location = new Point(3, 20)
-                };
-                button.Click += aboutButton_Click;
-                panel.Controls.Add(button);
-                x = x + 5 + hX;
-            }
+            UIGenerator.ShowOrders(this.panel1, aboutButton_Click);
         }
 
         private void aboutButton_Click(object sender, EventArgs e)
@@ -71,7 +37,7 @@ namespace CellularSalon.AdminPanels
         }
         private void updateOrders_Click(object sender, EventArgs e)
         {
-            showOrders();
+            UIGenerator.ShowOrders(this.panel1, aboutButton_Click);
         }
     }
 }

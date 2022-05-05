@@ -9,6 +9,7 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using Parser;
+using BLL.AdminPanel;
 
 namespace CellularSalon.AdminPanels
 {
@@ -20,20 +21,12 @@ namespace CellularSalon.AdminPanels
             InitializeComponent();
             this.incomeUser = item;
             positionBox.DataSource = new string[] { "Пользователь", "Администратор", "Менеджер", "Продавец" };
-            bindGrid();
-        }
-
-        private void bindGrid()
-        {
-            nameBox.Text = incomeUser.name;
-            passwordBox.Text = incomeUser.password;
-            emailBox.Text = incomeUser.email;
-            positionBox.SelectedItem = incomeUser.position;
+            UserData.BindGrid(nameBox, positionBox, emailBox, passwordBox, item);
         }
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            User user = createUser();
+            User user = UserData.CreateUser(positionBox.Text, emailBox.Text, passwordBox.Text, nameBox.Text);
             if(UserParser.updateUser(incomeUser, user))
             {
                 MessageBox.Show("Обновлено!");
@@ -41,23 +34,6 @@ namespace CellularSalon.AdminPanels
             else
             {
                 MessageBox.Show("Ошибка!");
-            }
-        }
-
-        private User createUser()
-        {
-            switch (positionBox.Text)
-            {
-                case "Пользователь":
-                    return new User(emailBox.Text, passwordBox.Text, nameBox.Text, positionBox.Text);
-                case "Администратор":
-                    return new User(emailBox.Text, passwordBox.Text, nameBox.Text, positionBox.Text, true, true, true, true, true, true, true, true, true, true);
-                case "Менеджер":
-                    return new User(emailBox.Text, passwordBox.Text, nameBox.Text, positionBox.Text, true, false, false, true, false, false, false, false, false, true);
-                case "Продавец":
-                    return new User(emailBox.Text, passwordBox.Text, nameBox.Text, positionBox.Text, true, false, false, false, false, true, true, false, true, false);
-                default:
-                    return null;
             }
         }
     }

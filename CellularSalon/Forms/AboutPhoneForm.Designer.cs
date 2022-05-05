@@ -29,8 +29,8 @@
         private void InitializeComponent()
         {
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
+            this.prevPicButton = new System.Windows.Forms.Button();
+            this.nextPicButton = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
@@ -63,25 +63,25 @@
             this.pictureBox1.TabStop = false;
             this.pictureBox1.Tag = "0";
             // 
-            // button1
+            // prevPicButton
             // 
-            this.button1.Location = new System.Drawing.Point(13, 265);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(75, 23);
-            this.button1.TabIndex = 1;
-            this.button1.Text = "Back image";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.prevPicButton.Location = new System.Drawing.Point(13, 265);
+            this.prevPicButton.Name = "prevPicButton";
+            this.prevPicButton.Size = new System.Drawing.Size(75, 23);
+            this.prevPicButton.TabIndex = 1;
+            this.prevPicButton.Text = "Back image";
+            this.prevPicButton.UseVisualStyleBackColor = true;
+            this.prevPicButton.Click += new System.EventHandler(this.PrevPicButton_Click);
             // 
-            // button2
+            // nextPicButton
             // 
-            this.button2.Location = new System.Drawing.Point(192, 265);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(75, 23);
-            this.button2.TabIndex = 2;
-            this.button2.Text = "Next Image";
-            this.button2.UseVisualStyleBackColor = true;
-            this.button2.Click += new System.EventHandler(this.button2_Click);
+            this.nextPicButton.Location = new System.Drawing.Point(192, 265);
+            this.nextPicButton.Name = "nextPicButton";
+            this.nextPicButton.Size = new System.Drawing.Size(75, 23);
+            this.nextPicButton.TabIndex = 2;
+            this.nextPicButton.Text = "Next Image";
+            this.nextPicButton.UseVisualStyleBackColor = true;
+            this.nextPicButton.Click += new System.EventHandler(this.NextPicButton_Click);
             // 
             // label1
             // 
@@ -297,8 +297,8 @@
             this.Controls.Add(this.label3);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.nextPicButton);
+            this.Controls.Add(this.prevPicButton);
             this.Controls.Add(this.pictureBox1);
             this.Name = "AboutPhoneForm";
             this.Text = "AboutPhoneForm";
@@ -311,8 +311,8 @@
         #endregion
 
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button prevPicButton;
+        private System.Windows.Forms.Button nextPicButton;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label2;
         private System.Windows.Forms.Label label3;

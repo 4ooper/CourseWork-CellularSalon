@@ -62,7 +62,7 @@
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(257, 20);
             this.nameBox.TabIndex = 2;
-            this.nameBox.TextChanged += new System.EventHandler(this.parseFields);
+            this.nameBox.TextChanged += new System.EventHandler(this.ParseFields);
             // 
             // emailBox
             // 
@@ -70,7 +70,7 @@
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(257, 20);
             this.emailBox.TabIndex = 3;
-            this.emailBox.TextChanged += new System.EventHandler(this.parseFields);
+            this.emailBox.TextChanged += new System.EventHandler(this.ParseFields);
             // 
             // label3
             // 
@@ -87,7 +87,7 @@
             this.passwordBox.Name = "passwordBox";
             this.passwordBox.Size = new System.Drawing.Size(246, 20);
             this.passwordBox.TabIndex = 5;
-            this.passwordBox.TextChanged += new System.EventHandler(this.parseFields);
+            this.passwordBox.TextChanged += new System.EventHandler(this.ParseFields);
             // 
             // regButton
             // 
@@ -97,7 +97,7 @@
             this.regButton.TabIndex = 6;
             this.regButton.Text = "Зарегистрироваться";
             this.regButton.UseVisualStyleBackColor = true;
-            this.regButton.Click += new System.EventHandler(this.regButton_Click);
+            this.regButton.Click += new System.EventHandler(this.RegButton_Click);
             // 
             // backButton
             // 
@@ -107,7 +107,7 @@
             this.backButton.TabIndex = 7;
             this.backButton.Text = "Назад";
             this.backButton.UseVisualStyleBackColor = true;
-            this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.Click += new System.EventHandler(this.BackButton_Click);
             // 
             // RegisterForm
             // 

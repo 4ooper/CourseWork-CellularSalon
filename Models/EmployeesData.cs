@@ -41,7 +41,7 @@ namespace Models
             this.canShowSolds = canShowSolds;
         }
 
-        public int totalSalePrice() => salePhones.Sum(x => x.phone.totalPrice());
+        public int totalSalePrice() => salePhones.Sum(x => x.price);
 
 
     }

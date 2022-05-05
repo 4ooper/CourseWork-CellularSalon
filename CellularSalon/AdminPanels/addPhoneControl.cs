@@ -10,6 +10,9 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models.PhoneClasses;
 using Parser;
+using BLL.AdminPanel;
+using BLL.ValidationEnterData;
+using BLL.FoldersBLL;
 
 namespace CellularSalon.AdminPanels
 {
@@ -29,114 +32,46 @@ namespace CellularSalon.AdminPanels
 
         private void choosePreviewButton_Click(object sender, EventArgs e)
         {
-            previewFileDialog.Multiselect = false;
-            var opd = previewFileDialog;
-            var otv = opd.ShowDialog();
-            if (otv == DialogResult.OK)
+            if(PhoneData.ChoosePreviewPhoto(previewFileDialog, sender as Button))
             {
-                if (isFileImage(opd.FileName))
-                {
-                    choosePreviewButton.Text = opd.FileName;
-                    choosePreviewButton.Tag = opd.FileName;
-                }
-                else
-                {
-                    MessageBox.Show("Выбранный файл не фотография!", "Ошибка");
-                }
+                MessageBox.Show("Файл выбран успешно!", "Успех!");
+            }
+            else
+            {
+                MessageBox.Show("Ничего не выбрано!", "Ошибка");
             }
             checkInputs();
         }
 
         private void choosePhotoButton_Click(object sender, EventArgs e)
         {
-            previewFileDialog.Multiselect = true;
-            var opd = previewFileDialog;
-            var otv = opd.ShowDialog();
-            if (otv == DialogResult.OK)
+            if (PhoneData.ChooseMainPhotos(previewFileDialog, sender as Button))
             {
-                if (isFilesImages(opd.FileNames))
-                {
-                    choosePhotoButton.Text = $"Выбрано: {opd.FileNames.Count()} файлов";
-                    choosePhotoButton.Tag = opd.FileNames as string[];
-                }
-                else
-                {
-                    MessageBox.Show("Выбранный файл не фотография!", "Ошибка");
-                }
+                MessageBox.Show("Файлы выбраны успешно!", "Успех!");
+            }
+            else
+            {
+                MessageBox.Show("Ничего не выбрано!", "Ошибка");
             }
             checkInputs();
         }
 
-        private bool isFilesImages(string[] pathes)
-        {
-            foreach (string path in pathes)
-            {
-                try
-                {
-                    Image image = Image.FromFile(path);
-                }
-                catch
-                {
-                    return false;
-                }
-            }
-            return true;
-        }
-
-        private bool isFileImage(string path)
-        {
-            try
-            {
-                Image image = Image.FromFile(path);
-                return true;
-            }
-            catch
-            {
-                return false;
-            }
-        }
-
         private void saveButton_Click(object sender, EventArgs e)
         {
-            createFolders();
+            Folders.CreateFolders(choosePhotoButton, choosePreviewButton, nameBox.Text);
 
             Phone phone = new Phone(nameBox.Text, $"..\\..\\..\\images\\{nameBox.Text}\\small.png",
-                getStringFolders(), Convert.ToInt32(countBox.Text), Convert.ToInt32(priceBox.Text), screenBox.Text, cpuBox.Text, memoryBox.Text,
+                PhoneData.getStringFolders(choosePhotoButton, nameBox.Text), 
+                Convert.ToInt32(countBox.Text), Convert.ToInt32(priceBox.Text), screenBox.Text, cpuBox.Text, memoryBox.Text,
                 simBox.Text, cameraBox.Text, batteryBox.Text, typeBox.Text);
 
-            if (PhoneParser.addPhone(phone))
+            if (PhoneData.CreatePhone(phone))
             {
                 MessageBox.Show("Телефон добавлен!");
             }
             else
             {
                 MessageBox.Show("Ошибка!");
-            }
-        }
-
-        private string[] getStringFolders()
-        {
-            List<string> strings = new List<string>();
-
-            string[] b = choosePhotoButton.Tag as string[];
-
-            for (int i = 0; i < b.Length; i++)
-            {
-                strings.Add($"..\\..\\..\\images\\{nameBox.Text}\\Normal\\{i + 1}.png");
-            }
-
-            return strings.ToArray();
-        }
-        
-        private void createFolders()
-        {
-            string[] b = choosePhotoButton.Tag as string[];
-            Directory.CreateDirectory($"..\\..\\..\\images\\{nameBox.Text}");
-            Directory.CreateDirectory($"..\\..\\..\\images\\{nameBox.Text}\\Normal");
-            File.Copy(choosePreviewButton.Tag.ToString(), $"..\\..\\..\\images\\{nameBox.Text}\\small.png", true);
-            for (int i = 0; i < b.Length; i++)
-            {
-                File.Copy(b[i], $"..\\..\\..\\images\\{nameBox.Text}\\Normal\\{i + 1}.png", true);
             }
         }
 
@@ -149,8 +84,8 @@ namespace CellularSalon.AdminPanels
         {
             if (nameBox.Text.Count() > 0 && countBox.Text.Count() > 0 && priceBox.Text.Count() > 0 &&
                 screenBox.Text.Count() > 0 && cpuBox.Text.Count() > 0 && memoryBox.Text.Count() > 0 &&
-                cameraBox.Text.Count() > 0 && batteryBox.Text.Count() > 0 && isInt(countBox.Text) &&
-                isInt(priceBox.Text) && choosePreviewButton.Tag != null && choosePhotoButton.Tag != null)
+                cameraBox.Text.Count() > 0 && batteryBox.Text.Count() > 0 && Validation.IsInt(countBox.Text) &&
+                Validation.IsInt(priceBox.Text) && choosePreviewButton.Tag != null && choosePhotoButton.Tag != null)
             {
                 saveButton.Enabled = true;
             }
@@ -158,19 +93,6 @@ namespace CellularSalon.AdminPanels
             {
                 saveButton.Enabled = false;
             }
-        }
-
-        private bool isInt(string item)
-        {
-            try
-            {
-                int value = Convert.ToInt32(item);
-            }
-            catch
-            {
-                return false;
-            }
-            return true;
         }
     }
 }

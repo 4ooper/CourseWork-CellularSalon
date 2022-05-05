@@ -1,9 +1,5 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using Models;
 using Newtonsoft.Json;
 
@@ -15,7 +11,7 @@ namespace Parser
         {
             get
             {
-                return getOrders();
+                return GetOrders();
             }
         }
 
@@ -29,7 +25,7 @@ namespace Parser
 
         private static string path = @"..\\..\\..\\orders.json";
 
-        private static List<Order> getOrders()
+        private static List<Order> GetOrders()
         {
             List<Order> orders = new List<Order>();
 
