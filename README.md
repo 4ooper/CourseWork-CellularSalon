@@ -1,10 +1,10 @@
-# CourseWork-CellularSalon
-Курсовая работа Муха Андрей ИТП-21
-Учёт продаж салона сотовой связи
+***Курсовая работа на тему "Учёт продаж салона сотовой связи"***  
+  
+***Выполнил: студент группы ИТП-21 Муха Андрей***
 
-# Данные для авторизации:
+**Данные для авторизации:**
 
-Admin - admin@mail.ru admin
-Manager manager@mail.ru manger
-Saler saler@mail.ru saler
-User user@mail.ru user123
+ 1. Admin - login: admin@mail.ru password: admin
+ 2. Manager - login: manager@mail.ru password: manager
+ 3. Saler- login: saler@mail.ru password: saler
+ 4. User- login: user@mail.ru password: user123
