@@ -38,10 +38,11 @@
             // nameLabel
             // 
             this.nameLabel.AutoSize = true;
-            this.nameLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.Font = new System.Drawing.Font("Times New Roman", 19.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.nameLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
             this.nameLabel.Location = new System.Drawing.Point(253, 13);
             this.nameLabel.Name = "nameLabel";
-            this.nameLabel.Size = new System.Drawing.Size(64, 24);
+            this.nameLabel.Size = new System.Drawing.Size(84, 31);
             this.nameLabel.TabIndex = 0;
             this.nameLabel.Text = "label1";
             // 
@@ -49,6 +50,7 @@
             // 
             this.countOfSalePhonesLabel.AutoSize = true;
             this.countOfSalePhonesLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countOfSalePhonesLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
             this.countOfSalePhonesLabel.Location = new System.Drawing.Point(3, 109);
             this.countOfSalePhonesLabel.Name = "countOfSalePhonesLabel";
             this.countOfSalePhonesLabel.Size = new System.Drawing.Size(61, 23);
@@ -59,6 +61,7 @@
             // 
             this.priceOfSaleLabel.AutoSize = true;
             this.priceOfSaleLabel.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priceOfSaleLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
             this.priceOfSaleLabel.Location = new System.Drawing.Point(3, 155);
             this.priceOfSaleLabel.Name = "priceOfSaleLabel";
             this.priceOfSaleLabel.Size = new System.Drawing.Size(61, 23);
@@ -69,6 +72,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Times New Roman", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
             this.label2.Location = new System.Drawing.Point(3, 69);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(213, 23);
@@ -87,6 +91,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.priceOfSaleLabel);
             this.Controls.Add(this.countOfSalePhonesLabel);

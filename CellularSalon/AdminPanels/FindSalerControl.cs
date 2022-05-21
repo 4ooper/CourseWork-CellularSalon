@@ -1,22 +1,22 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Parser;
+using Parser.Repositories;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер для поиска продавца и просмотра информации о продавце
+    /// </summary>
     public partial class FindSalerControl : UserControl
     {
+        private ParserSingleton instance = ParserSingleton.GetInstance();
+
         public FindSalerControl()
         {
             InitializeComponent();
-            comboBox1.DataSource = UserParser.employees.Where(item => item.position == "Продавец").Select(item => item.name).ToList();
+            comboBox1.DataSource = instance.userParser.entities.Where(item => item.position == "Продавец").Select(item => item.name).ToList();
         }
 
         private void findButton_Click(object sender, EventArgs e)

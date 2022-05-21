@@ -36,37 +36,46 @@
             // comboBox1
             // 
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(4, 4);
+            this.comboBox1.Location = new System.Drawing.Point(5, 5);
+            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(157, 21);
+            this.comboBox1.Size = new System.Drawing.Size(208, 24);
             this.comboBox1.TabIndex = 0;
             // 
             // findButton
             // 
-            this.findButton.Location = new System.Drawing.Point(4, 424);
+            this.findButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.findButton.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.findButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.findButton.Location = new System.Drawing.Point(5, 522);
+            this.findButton.Margin = new System.Windows.Forms.Padding(4);
             this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(157, 65);
+            this.findButton.Size = new System.Drawing.Size(209, 80);
             this.findButton.TabIndex = 1;
             this.findButton.Text = "Показать";
-            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.UseVisualStyleBackColor = false;
             this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(168, 4);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.panel1.Location = new System.Drawing.Point(224, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(593, 485);
+            this.panel1.Size = new System.Drawing.Size(791, 597);
             this.panel1.TabIndex = 2;
             // 
             // FindSalerControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.findButton);
             this.Controls.Add(this.comboBox1);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FindSalerControl";
-            this.Size = new System.Drawing.Size(764, 492);
+            this.Size = new System.Drawing.Size(1019, 606);
             this.ResumeLayout(false);
 
         }

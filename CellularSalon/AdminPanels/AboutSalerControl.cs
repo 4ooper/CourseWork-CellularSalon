@@ -1,24 +1,22 @@
-﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
+﻿using System.Data;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Parser;
+using Parser.Repositories;
 using Models;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер информации о продавце
+    /// </summary>
     public partial class AboutSalerControl : UserControl
     {
         private User user;
+        private static ParserSingleton instance = ParserSingleton.GetInstance();
         public AboutSalerControl(string name)
         {
             InitializeComponent();
-            this.user = UserParser.employees.Where(item => item.name == name).Select(item => item).ToList()[0];
+            this.user = instance.userParser.entities.Where(item => item.name == name).Select(item => item).ToList()[0];
             nameLabel.Text = name;
             comboBox1.DataSource = user.employeesData.salePhones.Select(item => item.phoneName).ToList();
             countOfSalePhonesLabel.Text = $"Количество проданных телефонов: {user.employeesData.salePhones.Count()}";

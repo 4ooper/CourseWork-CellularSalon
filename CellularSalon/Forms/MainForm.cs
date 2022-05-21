@@ -2,21 +2,46 @@
 using System.Windows.Forms;
 using Models;
 using Models.PhoneClasses;
-using BLL.Main;
-using BLL.UIGenerator;
+using CellularSalon.UIGenerator;
 
 namespace CellularSalon.Forms
 {
+    /// <summary>
+    /// Главное окно приложения
+    /// </summary>
     public partial class MainForm : Form
     {
         private User user;
+        private UIGeneratorPhone UIGenerator;
         public MainForm(Form form, User item = null)
         {
             InitializeComponent();
-            MainFormBLL.BindUser(this.userName, this.userPosition, this.adminPanelButton, item);
             user = item;
+            BindUser();
             form.Hide();
-            UIGenerator.AddPhones(this.mainPanel, AboutButton_Click, 50);
+            UIGenerator = new UIGeneratorPhone(this.mainPanel, AboutButton_Click, 50, 140, 230);
+            UIGenerator.Generate();
+        }
+
+        public void BindUser()
+        {
+            if (user != null)
+            {
+                userName.Text = user.name;
+                userPosition.Text = user.position;
+                adminPanelButton.Visible = false;
+                if (user.employeesData != null)
+                {
+                    adminPanelButton.Visible = user.employeesData.canUseAdminPanel;
+                }
+
+            }
+            else
+            {
+                userName.Text = "Гость";
+                userPosition.Visible = false;
+                adminPanelButton.Visible = false;
+            }
         }
 
         private void AboutButton_Click(object sender, EventArgs e)

@@ -36,38 +36,45 @@
             // usersBox
             // 
             this.usersBox.FormattingEnabled = true;
-            this.usersBox.Location = new System.Drawing.Point(3, 3);
+            this.usersBox.Location = new System.Drawing.Point(4, 4);
+            this.usersBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.usersBox.Name = "usersBox";
-            this.usersBox.Size = new System.Drawing.Size(155, 21);
+            this.usersBox.Size = new System.Drawing.Size(205, 24);
             this.usersBox.TabIndex = 0;
             // 
             // phonesBox
             // 
             this.phonesBox.FormattingEnabled = true;
-            this.phonesBox.Location = new System.Drawing.Point(603, 3);
+            this.phonesBox.Location = new System.Drawing.Point(804, 4);
+            this.phonesBox.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.phonesBox.Name = "phonesBox";
-            this.phonesBox.Size = new System.Drawing.Size(155, 21);
+            this.phonesBox.Size = new System.Drawing.Size(205, 24);
             this.phonesBox.TabIndex = 1;
             // 
             // saleButton
             // 
-            this.saleButton.Location = new System.Drawing.Point(272, 35);
+            this.saleButton.BackColor = System.Drawing.SystemColors.ActiveCaption;
+            this.saleButton.Font = new System.Drawing.Font("Times New Roman", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saleButton.Location = new System.Drawing.Point(361, 4);
+            this.saleButton.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.saleButton.Name = "saleButton";
-            this.saleButton.Size = new System.Drawing.Size(217, 67);
+            this.saleButton.Size = new System.Drawing.Size(289, 82);
             this.saleButton.TabIndex = 2;
             this.saleButton.Text = "Продать";
-            this.saleButton.UseVisualStyleBackColor = true;
+            this.saleButton.UseVisualStyleBackColor = false;
             this.saleButton.Click += new System.EventHandler(this.saleButton_Click);
             // 
             // SaleControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.SystemColors.InactiveCaption;
             this.Controls.Add(this.saleButton);
             this.Controls.Add(this.phonesBox);
             this.Controls.Add(this.usersBox);
+            this.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.Name = "SaleControl";
-            this.Size = new System.Drawing.Size(764, 492);
+            this.Size = new System.Drawing.Size(1019, 606);
             this.ResumeLayout(false);
 
         }

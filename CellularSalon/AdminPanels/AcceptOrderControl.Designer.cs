@@ -39,75 +39,93 @@
             // modelLabel
             // 
             this.modelLabel.AutoSize = true;
-            this.modelLabel.Font = new System.Drawing.Font("Times New Roman", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.modelLabel.Location = new System.Drawing.Point(3, 11);
+            this.modelLabel.Font = new System.Drawing.Font("Yu Gothic UI", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.modelLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.modelLabel.Location = new System.Drawing.Point(4, 14);
+            this.modelLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.modelLabel.Name = "modelLabel";
-            this.modelLabel.Size = new System.Drawing.Size(137, 31);
+            this.modelLabel.Size = new System.Drawing.Size(175, 46);
             this.modelLabel.TabIndex = 0;
             this.modelLabel.Text = "%model%";
             // 
             // acceptButton
             // 
-            this.acceptButton.Location = new System.Drawing.Point(4, 411);
+            this.acceptButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.acceptButton.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.acceptButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.acceptButton.Location = new System.Drawing.Point(5, 506);
+            this.acceptButton.Margin = new System.Windows.Forms.Padding(4);
             this.acceptButton.Name = "acceptButton";
-            this.acceptButton.Size = new System.Drawing.Size(173, 74);
+            this.acceptButton.Size = new System.Drawing.Size(231, 91);
             this.acceptButton.TabIndex = 2;
             this.acceptButton.Text = "Одобрить";
-            this.acceptButton.UseVisualStyleBackColor = true;
+            this.acceptButton.UseVisualStyleBackColor = false;
             this.acceptButton.Click += new System.EventHandler(this.acceptButton_Click);
             // 
             // rejectButton
             // 
-            this.rejectButton.Location = new System.Drawing.Point(321, 411);
+            this.rejectButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.rejectButton.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.rejectButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.rejectButton.Location = new System.Drawing.Point(428, 506);
+            this.rejectButton.Margin = new System.Windows.Forms.Padding(4);
             this.rejectButton.Name = "rejectButton";
-            this.rejectButton.Size = new System.Drawing.Size(173, 74);
+            this.rejectButton.Size = new System.Drawing.Size(231, 91);
             this.rejectButton.TabIndex = 3;
             this.rejectButton.Text = "Отклонить";
-            this.rejectButton.UseVisualStyleBackColor = true;
+            this.rejectButton.UseVisualStyleBackColor = false;
             this.rejectButton.Click += new System.EventHandler(this.rejectButton_Click);
             // 
             // userLabel
             // 
             this.userLabel.AutoSize = true;
-            this.userLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userLabel.Location = new System.Drawing.Point(4, 81);
+            this.userLabel.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.userLabel.Location = new System.Drawing.Point(5, 100);
+            this.userLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.userLabel.Name = "userLabel";
-            this.userLabel.Size = new System.Drawing.Size(107, 19);
+            this.userLabel.Size = new System.Drawing.Size(167, 31);
             this.userLabel.TabIndex = 4;
             this.userLabel.Text = "Пользователь";
             // 
             // priceLabel
             // 
             this.priceLabel.AutoSize = true;
-            this.priceLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.priceLabel.Location = new System.Drawing.Point(4, 125);
+            this.priceLabel.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.priceLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.priceLabel.Location = new System.Drawing.Point(5, 154);
+            this.priceLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.priceLabel.Name = "priceLabel";
-            this.priceLabel.Size = new System.Drawing.Size(50, 19);
+            this.priceLabel.Size = new System.Drawing.Size(77, 31);
             this.priceLabel.TabIndex = 5;
             this.priceLabel.Text = "label2";
             // 
             // countLabel
             // 
             this.countLabel.AutoSize = true;
-            this.countLabel.Font = new System.Drawing.Font("Times New Roman", 12F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.countLabel.Location = new System.Drawing.Point(4, 170);
+            this.countLabel.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.countLabel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.countLabel.Location = new System.Drawing.Point(5, 209);
+            this.countLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.countLabel.Name = "countLabel";
-            this.countLabel.Size = new System.Drawing.Size(50, 19);
+            this.countLabel.Size = new System.Drawing.Size(77, 31);
             this.countLabel.TabIndex = 6;
             this.countLabel.Text = "label2";
             // 
             // AcceptOrderControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.Controls.Add(this.countLabel);
             this.Controls.Add(this.priceLabel);
             this.Controls.Add(this.userLabel);
             this.Controls.Add(this.rejectButton);
             this.Controls.Add(this.acceptButton);
             this.Controls.Add(this.modelLabel);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "AcceptOrderControl";
-            this.Size = new System.Drawing.Size(497, 488);
+            this.Size = new System.Drawing.Size(663, 601);
             this.ResumeLayout(false);
             this.PerformLayout();
 

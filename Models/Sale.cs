@@ -1,14 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.IO;
-using System.Linq;
 using System.Text;
-using System.Threading.Tasks;
-using Models.PhoneClasses;
 
 
 namespace Models
 {
+    /// <summary>
+    /// Класс описания продажи
+    /// </summary>
     public class Sale
     {
         public string phoneName;

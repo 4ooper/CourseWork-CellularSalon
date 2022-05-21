@@ -1,12 +1,11 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 
 namespace Models
 {
+    /// <summary>
+    /// Класс описания заказа
+    /// </summary>
     public class Order
     {
         public User user;

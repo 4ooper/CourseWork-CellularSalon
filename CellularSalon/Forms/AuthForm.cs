@@ -2,13 +2,17 @@
 using System.Linq;
 using System.Windows.Forms;
 using Models;
-using BLL.Auth;
-using BLL.ValidationEnterData;
+using BLL.Implementation.Validate;
+using BLL.Implementation.Authentication;
 
 namespace CellularSalon.Forms
 {
+    /// <summary>
+    /// Окно для аутенфикации в приложении
+    /// </summary>
     public partial class authForm : Form
     {
+        private Authentication authentication = new Authentication();
         public authForm(Form form = null)
         {
             InitializeComponent();
@@ -36,9 +40,9 @@ namespace CellularSalon.Forms
 
         private void SingInButton_Click(object sender, EventArgs e)
         {
-            if(Validation.IsUserExist(emailBox.Text))
+            if(Validation.IsUserExist(emailBox.Text, passwordBox.Text))
             {
-                User item = AuthForm.getItem(emailBox.Text, passwordBox.Text);
+                User item = authentication.GetItem(emailBox.Text, passwordBox.Text);
                 new MainForm(this, item).Show();
             }
             else
@@ -60,6 +64,16 @@ namespace CellularSalon.Forms
         private void exitButton_Click(object sender, EventArgs e)
         {
             Application.Exit();
+        }
+
+        private void authForm_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void label4_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

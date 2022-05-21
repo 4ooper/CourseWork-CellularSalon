@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Models
+﻿namespace Models
 {
+    /// <summary>
+    /// Класс описания пользователя
+    /// </summary>
     public class User
     {
         public string email { get; set; }
@@ -35,14 +32,14 @@ namespace Models
 
         public User(string email, string password, string name, string position, bool canUseAdminPanel, bool canAddPhones, 
             bool canEditPhones, bool canShowListOfPhones, bool canChangeUsers, bool canShowOrders, 
-            bool canShowDataAboutSaler, bool canShowSalerData, bool canSold, bool canShowSolds)
+            bool canShowDataAboutSaler, bool canShowSalerData, bool canSold, bool canShowSolds, bool canShowStockReports)
         {
             this.email = email;
             this.password = password;
             this.name = name;
             this.position = position;
             this.employeesData = new EmployeesData(canUseAdminPanel, canAddPhones, canEditPhones, canShowListOfPhones,
-                canChangeUsers, canShowOrders, canShowDataAboutSaler, canShowSalerData, canSold, canShowSolds);
+                canChangeUsers, canShowOrders, canShowDataAboutSaler, canShowSalerData, canSold, canShowSolds, canShowStockReports);
         }
     }
 }

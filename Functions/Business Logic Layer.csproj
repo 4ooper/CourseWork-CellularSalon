@@ -43,17 +43,20 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="AboutPhoneForm\AboutPhoneBLL.cs" />
-    <Compile Include="AdminPanel\PhoneData.cs" />
-    <Compile Include="AdminPanel\UserData.cs" />
-    <Compile Include="Auth\AuthForm.cs" />
-    <Compile Include="CarouselPicture\Carousel.cs" />
-    <Compile Include="FoldersBLL\Folders.cs" />
-    <Compile Include="Main\MainFormBLL.cs" />
+    <Compile Include="Implementation\Folders\Folders.cs" />
+    <Compile Include="Implementation\AdminsFunctions\Phones.cs" />
+    <Compile Include="Implementation\AdminsFunctions\Sales.cs" />
+    <Compile Include="Implementation\AdminsFunctions\Users.cs" />
+    <Compile Include="Implementation\Authentication\Authentication.cs" />
+    <Compile Include="Implementation\Registration\Registaration.cs" />
+    <Compile Include="Interfaces\IAuthenficaton.cs" />
+    <Compile Include="Interfaces\IPhone.cs" />
+    <Compile Include="Interfaces\IPhoto.cs" />
+    <Compile Include="Interfaces\ISales.cs" />
+    <Compile Include="Interfaces\IUser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Registration\Registatration.cs" />
-    <Compile Include="UIGenerator\UIGenerator.cs" />
-    <Compile Include="ValidationEnterData\Validation.cs" />
+    <Compile Include="Interfaces\IRegistaration.cs" />
+    <Compile Include="Implementation\Validate\Validation.cs" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\Models\Models.csproj">
@@ -65,5 +68,6 @@
       <Name>Parser</Name>
     </ProjectReference>
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

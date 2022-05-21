@@ -1,11 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Models
 {
+    /// <summary>
+    /// Класс содержащий функции доступа пользователя
+    /// </summary>
     public class EmployeesData
     {
         public List<Sale> salePhones;
@@ -20,13 +20,14 @@ namespace Models
         public bool canShowSalerData;
         public bool canSold;
         public bool canShowSolds;
+        public bool canShowStockReports;
 
 
         public EmployeesData() { }
 
         public EmployeesData(bool canUseAdminPanel, bool canAddPhones, bool canEditPhones, bool canShowListOfPhones,
             bool canChangeUsers, bool canShowOrders, bool canShowDataAboutSaler, bool canShowSalerData, bool canSold, 
-            bool canShowSolds)
+            bool canShowSolds, bool canShowStockReports)
         {
             this.salePhones = new List<Sale>();
             this.canUseAdminPanel = canUseAdminPanel;
@@ -39,6 +40,7 @@ namespace Models
             this.canShowSalerData = canShowSalerData;
             this.canSold = canSold;
             this.canShowSolds = canShowSolds;
+            this.canShowStockReports = canShowStockReports;
         }
 
         public int totalSalePrice() => salePhones.Sum(x => x.price);

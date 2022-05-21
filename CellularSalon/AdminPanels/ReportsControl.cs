@@ -1,24 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Models;
-using Parser;
-using BLL.UIGenerator;
+using CellularSalon.UIGenerator;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер отображения отчётов по продажам
+    /// </summary>
     public partial class ReportsControl : UserControl
     {
+        private UIGeneratorSales generatorSales;
         public ReportsControl()
         {
             InitializeComponent();
-            UIGenerator.showSales(this, reportButton_Click);
+            generatorSales = new UIGeneratorSales(this, reportButton_Click, 20, 130, 70);
+            generatorSales.Generate();
         }
 
         private void reportButton_Click(object sender, EventArgs e)

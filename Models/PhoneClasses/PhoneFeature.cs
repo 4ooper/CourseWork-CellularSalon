@@ -1,11 +1,8 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
-
-namespace Models
+﻿namespace Models
 {
+    /// <summary>
+    /// Класс описание характеристик телефона
+    /// </summary>
     public class PhoneFeature
     {
         public string screen { get; set; }

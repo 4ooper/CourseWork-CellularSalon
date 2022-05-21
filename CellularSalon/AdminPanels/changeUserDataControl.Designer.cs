@@ -42,87 +42,94 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label1.Location = new System.Drawing.Point(3, 13);
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.label1.Location = new System.Drawing.Point(2, 7);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(61, 22);
+            this.label1.Size = new System.Drawing.Size(61, 25);
             this.label1.TabIndex = 0;
             this.label1.Text = "ФИО:";
             // 
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label2.Location = new System.Drawing.Point(3, 46);
+            this.label2.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.label2.Location = new System.Drawing.Point(2, 35);
             this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(73, 22);
+            this.label2.Size = new System.Drawing.Size(72, 25);
             this.label2.TabIndex = 1;
             this.label2.Text = "E-mail:";
             // 
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label3.Location = new System.Drawing.Point(3, 82);
+            this.label3.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.label3.Location = new System.Drawing.Point(2, 64);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(79, 22);
+            this.label3.Size = new System.Drawing.Size(84, 25);
             this.label3.TabIndex = 2;
             this.label3.Text = "Пароль:";
             // 
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Times New Roman", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.label4.Location = new System.Drawing.Point(3, 121);
+            this.label4.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))), System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.label4.Location = new System.Drawing.Point(3, 98);
             this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(87, 22);
+            this.label4.Size = new System.Drawing.Size(74, 25);
             this.label4.TabIndex = 3;
             this.label4.Text = "Статус:";
             // 
             // nameBox
             // 
-            this.nameBox.Location = new System.Drawing.Point(71, 13);
+            this.nameBox.Location = new System.Drawing.Point(69, 12);
             this.nameBox.Name = "nameBox";
             this.nameBox.Size = new System.Drawing.Size(208, 20);
             this.nameBox.TabIndex = 4;
             // 
             // emailBox
             // 
-            this.emailBox.Location = new System.Drawing.Point(82, 46);
+            this.emailBox.Location = new System.Drawing.Point(80, 41);
             this.emailBox.Name = "emailBox";
             this.emailBox.Size = new System.Drawing.Size(197, 20);
             this.emailBox.TabIndex = 5;
             // 
             // passwordBox
             // 
-            this.passwordBox.Location = new System.Drawing.Point(88, 82);
+            this.passwordBox.Location = new System.Drawing.Point(92, 70);
             this.passwordBox.Name = "passwordBox";
-            this.passwordBox.Size = new System.Drawing.Size(191, 20);
+            this.passwordBox.Size = new System.Drawing.Size(185, 20);
             this.passwordBox.TabIndex = 6;
             // 
             // positionBox
             // 
             this.positionBox.FormattingEnabled = true;
-            this.positionBox.Location = new System.Drawing.Point(97, 121);
+            this.positionBox.Location = new System.Drawing.Point(83, 104);
             this.positionBox.Name = "positionBox";
-            this.positionBox.Size = new System.Drawing.Size(182, 21);
+            this.positionBox.Size = new System.Drawing.Size(194, 21);
             this.positionBox.TabIndex = 7;
             // 
             // saveButton
             // 
-            this.saveButton.Location = new System.Drawing.Point(7, 157);
+            this.saveButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.saveButton.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.saveButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.saveButton.Location = new System.Drawing.Point(7, 142);
             this.saveButton.Name = "saveButton";
-            this.saveButton.Size = new System.Drawing.Size(272, 56);
+            this.saveButton.Size = new System.Drawing.Size(270, 56);
             this.saveButton.TabIndex = 8;
             this.saveButton.Text = "Сохранить";
-            this.saveButton.UseVisualStyleBackColor = true;
+            this.saveButton.UseVisualStyleBackColor = false;
             this.saveButton.Click += new System.EventHandler(this.saveButton_Click);
             // 
             // changeUserDataControl
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.Controls.Add(this.saveButton);
             this.Controls.Add(this.positionBox);
             this.Controls.Add(this.passwordBox);

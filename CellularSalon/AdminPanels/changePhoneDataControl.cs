@@ -1,26 +1,23 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models.PhoneClasses;
-using Parser;
-using BLL.ValidationEnterData;
+using BLL.Implementation.Validate;
 using BLL.CarouselPicture;
-using BLL.AdminPanel;
-using BLL.FoldersBLL;
+using BLL.Implementation.Folders;
+using BLL.Implementation;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер изменение информации о телефоне
+    /// </summary>
     public partial class changePhoneDataControl : UserControl
     {
         private Phone incomePhone;
-
+        private Phones phoneFun = new Phones();
         public changePhoneDataControl(Phone item)
         {
             InitializeComponent();
@@ -78,7 +75,7 @@ namespace CellularSalon.AdminPanels
 
         private void previewButton_Click(object sender, EventArgs e)
         {
-            if(PhoneData.ChoosePreviewPhoto(photoFileDialog, sender as Button))
+            if(phoneFun.ChoosePreviewPhoto(photoFileDialog, sender as Button))
             {
                 MessageBox.Show("Файл выбран успешно!", "Успех!");
             }
@@ -91,7 +88,7 @@ namespace CellularSalon.AdminPanels
 
         private void mainPhotoButton_Click(object sender, EventArgs e)
         {
-            if (PhoneData.ChooseMainPhotos(photoFileDialog, sender as Button))
+            if (phoneFun.ChooseMainPhotos(photoFileDialog, sender as Button))
             {
                 MessageBox.Show("Файл выбран успешно!", "Успех!");
             }
@@ -108,11 +105,10 @@ namespace CellularSalon.AdminPanels
             Folders.deleteFolders(incomePhone.name);
             Folders.moveFromTmp(nameBox.Text);
 
-            Phone phone = new Phone(nameBox.Text, $"..\\..\\..\\images\\{nameBox.Text}\\small.png",
-                PhoneData.getStringFolders(mainPhotoButton, nameBox.Text), incomePhone.count, Convert.ToInt32(priceBox.Text), screenBox.Text, cpuBox.Text, memoryBox.Text,
-                simBox.Text, cameraBox.Text, accumBox.Text, typeBox.Text);
-
-            if(PhoneData.UpdatePhone(incomePhone, phone))
+            Phone phone = phoneFun.CreatePhone(nameBox.Text.Trim(), mainPhotoButton, priceBox.Text, screenBox.Text, cpuBox.Text,
+                memoryBox.Text, simBox.Text, cameraBox.Text, accumBox.Text, typeBox.Text);
+                
+            if(phoneFun.UpdatePhone(incomePhone, phone))
             {
                 MessageBox.Show("Выполнено!");
             }
@@ -125,7 +121,7 @@ namespace CellularSalon.AdminPanels
         private void deleteButton_Click(object sender, EventArgs e)
         {
             Folders.deleteFolders(incomePhone.name);
-            if (PhoneData.DeletePhone(incomePhone))
+            if (phoneFun.DeletePhone(incomePhone))
             {
                 MessageBox.Show("Выполнено!");
             }
@@ -133,6 +129,16 @@ namespace CellularSalon.AdminPanels
             {
                 MessageBox.Show("Что то пошло не так!");
             }
+        }
+
+        private void label10_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void prevPicButton_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

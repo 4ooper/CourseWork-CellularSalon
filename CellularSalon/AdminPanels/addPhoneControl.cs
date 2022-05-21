@@ -1,23 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models.PhoneClasses;
-using Parser;
-using BLL.AdminPanel;
-using BLL.ValidationEnterData;
-using BLL.FoldersBLL;
+using BLL.Implementation.Validate;
+using BLL.Implementation.Folders;
+using BLL.Implementation;
+using Models;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер добавление телефона
+    /// </summary>
     public partial class addPhoneControl : UserControl
     {
+        private Phones phoneFun = new Phones();
+
         public addPhoneControl()
         {
             InitializeComponent();
@@ -32,7 +30,7 @@ namespace CellularSalon.AdminPanels
 
         private void choosePreviewButton_Click(object sender, EventArgs e)
         {
-            if(PhoneData.ChoosePreviewPhoto(previewFileDialog, sender as Button))
+            if(phoneFun.ChoosePreviewPhoto(previewFileDialog, sender as Button))
             {
                 MessageBox.Show("Файл выбран успешно!", "Успех!");
             }
@@ -45,7 +43,7 @@ namespace CellularSalon.AdminPanels
 
         private void choosePhotoButton_Click(object sender, EventArgs e)
         {
-            if (PhoneData.ChooseMainPhotos(previewFileDialog, sender as Button))
+            if (phoneFun.ChooseMainPhotos(previewFileDialog, sender as Button))
             {
                 MessageBox.Show("Файлы выбраны успешно!", "Успех!");
             }
@@ -58,20 +56,24 @@ namespace CellularSalon.AdminPanels
 
         private void saveButton_Click(object sender, EventArgs e)
         {
-            Folders.CreateFolders(choosePhotoButton, choosePreviewButton, nameBox.Text);
-
-            Phone phone = new Phone(nameBox.Text, $"..\\..\\..\\images\\{nameBox.Text}\\small.png",
-                PhoneData.getStringFolders(choosePhotoButton, nameBox.Text), 
-                Convert.ToInt32(countBox.Text), Convert.ToInt32(priceBox.Text), screenBox.Text, cpuBox.Text, memoryBox.Text,
-                simBox.Text, cameraBox.Text, batteryBox.Text, typeBox.Text);
-
-            if (PhoneData.CreatePhone(phone))
+            if (Validation.isPhoneExist(nameBox.Text.Trim()))
             {
-                MessageBox.Show("Телефон добавлен!");
+                Folders.CreateFolders(choosePhotoButton, choosePreviewButton, nameBox.Text.Trim());
+
+                Phone phone = phoneFun.CreatePhone(nameBox.Text, choosePhotoButton, priceBox.Text, screenBox.Text, cpuBox.Text,
+                                         memoryBox.Text, simBox.Text, cameraBox.Text, batteryBox.Text, typeBox.Text);
+                if (phoneFun.AddPhone(phone))
+                {
+                    MessageBox.Show("Телефон добавлен!");
+                }
+                else
+                {
+                    MessageBox.Show("Что то пошло не так!");
+                }
             }
             else
             {
-                MessageBox.Show("Ошибка!");
+                MessageBox.Show("Ошибка! Возможно данная модель телефона уже существует!");
             }
         }
 
@@ -82,9 +84,9 @@ namespace CellularSalon.AdminPanels
 
         private void checkInputs()
         {
-            if (nameBox.Text.Count() > 0 && countBox.Text.Count() > 0 && priceBox.Text.Count() > 0 &&
+            if (nameBox.Text.Count() > 0  && priceBox.Text.Count() > 0 &&
                 screenBox.Text.Count() > 0 && cpuBox.Text.Count() > 0 && memoryBox.Text.Count() > 0 &&
-                cameraBox.Text.Count() > 0 && batteryBox.Text.Count() > 0 && Validation.IsInt(countBox.Text) &&
+                cameraBox.Text.Count() > 0 && batteryBox.Text.Count() > 0 &&
                 Validation.IsInt(priceBox.Text) && choosePreviewButton.Tag != null && choosePhotoButton.Tag != null)
             {
                 saveButton.Enabled = true;
@@ -93,6 +95,11 @@ namespace CellularSalon.AdminPanels
             {
                 saveButton.Enabled = false;
             }
+        }
+
+        private void addPhoneControl_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }

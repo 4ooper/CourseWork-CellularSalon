@@ -1,17 +1,13 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models;
 using CellularSalon.AdminPanels;
 
 namespace CellularSalon.Forms
 {
+    /// <summary>
+    /// Окно админ панели
+    /// </summary>
     public partial class adminPanelForm : Form
     {
         private User user;
@@ -36,6 +32,8 @@ namespace CellularSalon.Forms
             salerButton.Enabled = user.employeesData.canShowSalerData;
             saleButton.Enabled = user.employeesData.canSold;
             showSalesButton.Enabled = user.employeesData.canShowSolds;
+            addPhoneCountButton.Enabled = user.employeesData.canAddPhones;
+            stockReportsButton.Enabled = user.employeesData.canShowStockReports;
 
         }
 
@@ -96,6 +94,23 @@ namespace CellularSalon.Forms
         {
             mainPanel.Controls.Clear();
             mainPanel.Controls.Add(new AboutSalerControl(user.name));
+        }
+
+        private void addPhoneCountButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(new AddStockControl());
+        }
+
+        private void stockReportsButton_Click(object sender, EventArgs e)
+        {
+            mainPanel.Controls.Clear();
+            mainPanel.Controls.Add(new StocksReportsControl());
+        }
+
+        private void pictureBox1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }

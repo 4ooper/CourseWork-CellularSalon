@@ -1,27 +1,31 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Parser;
+using Parser.Repositories;
 using Models;
 using Models.PhoneClasses;
+using BLL.Implementation;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер управления активными заказами
+    /// </summary>
     public partial class AcceptOrderControl : UserControl
     {
         private User adminUser;
         private Order order;
+        private int count;
+
+        private Phones phoneFun = new Phones();
+        private ParserSingleton instance = ParserSingleton.GetInstance();
         private Phone phone
         {
             get
             {
-                return PhoneParser.phones.Where(item => item.name == order.phone.name).ToList()[0];
+                return instance.phoneParser.entities.Where(item => item.name == order.phone.name).ToList()[0];
             }
         }
         private User client
@@ -37,6 +41,7 @@ namespace CellularSalon.AdminPanels
             InitializeComponent();
             this.order = order;
             this.adminUser = user;
+            this.count = instance.stockParser.entities.Find(item => item.model == order.phone.name).count;
             bindGrid();
         }
 
@@ -44,38 +49,36 @@ namespace CellularSalon.AdminPanels
         {
             userLabel.Text = $"Покупатель: {client.name}";
             priceLabel.Text = $"Цена: {phone.totalPrice()}";
-            countLabel.Text = $"Количество: {phone.count}";
+            countLabel.Text = $"Количество: {count}";
             modelLabel.Text = $"Модель: {phone.name}";
-            acceptButton.Enabled = phone.count != 0;
+            acceptButton.Enabled = count != 0;
         }
 
         private void acceptButton_Click(object sender, EventArgs e)
         {
             Sale sale = new Sale(phone.name, client.email, adminUser.email, phone.totalPrice());
-            List<Sale> sales = SaleParser.sales;
-            sales.Add(sale);
-            SaleParser.writeData(sales);
-            List<Phone> phones = PhoneParser.phones;
-            phones[phones.FindIndex(item => item.name == order.phone.name)].count -= 1;
-            PhoneParser.writeData(phones);
-            List<Order> orders = OrdersParser.orders;
-            orders.RemoveAt(orders.FindIndex(item => item.phone.name == order.phone.name && item.user.name == order.user.name));
-            OrdersParser.writeNotes(orders);
-            List<User> users = UserParser.employees;
-            users[UserParser.employees.FindIndex(item => item.name == adminUser.name)].employeesData.salePhones.Add(sale);
-            UserParser.writeData(users);
-            MessageBox.Show("Продажа записана!");
-            this.Hide();
+            if(phoneFun.SalePhone(sale, phone, adminUser, order))
+            {
+                MessageBox.Show("Продажа записана!");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка! Заказ не одобрен!");
+            }
         }
 
         private void rejectButton_Click(object sender, EventArgs e)
         {
-            List<Order> orders = OrdersParser.orders;
-            orders.RemoveAt(orders.FindIndex(item => item.phone.name == order.phone.name && item.user.name == order.user.name));
-            OrdersParser.writeNotes(orders);
-            MessageBox.Show("Заказ удалён!");
-            this.Hide();
-
+            if (phoneFun.RemoveOrder(order))
+            {
+                MessageBox.Show("Заказ удалён!");
+                this.Hide();
+            }
+            else
+            {
+                MessageBox.Show("Ошибка!");
+            }
         }
     }
 }

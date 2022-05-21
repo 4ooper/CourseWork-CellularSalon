@@ -45,10 +45,17 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="OrdersParser.cs" />
-    <Compile Include="SaleParser.cs" />
-    <Compile Include="UserParser.cs" />
-    <Compile Include="PhoneParser.cs" />
+    <Compile Include="Interfaces\IParser.cs" />
+    <Compile Include="Repositories\Datas URL.cs" />
+    <Compile Include="Repositories\OrdersParser.cs" />
+    <Compile Include="Repositories\Parser.cs" />
+    <Compile Include="Repositories\ParserSingleton.cs" />
+    <Compile Include="Repositories\PhoneTypeParser.cs" />
+    <Compile Include="Repositories\SaleParser.cs" />
+    <Compile Include="Repositories\StockOperationParser.cs" />
+    <Compile Include="Repositories\StockParser.cs" />
+    <Compile Include="Repositories\UserParser.cs" />
+    <Compile Include="Repositories\PhoneParser.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -60,5 +67,6 @@
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

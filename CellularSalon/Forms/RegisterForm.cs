@@ -1,13 +1,17 @@
 ﻿using System;
 using System.Windows.Forms;
-using BLL.Registration;
+using BLL.Implementation.Registration;
 using Models;
-using BLL.ValidationEnterData;
+using BLL.Implementation.Validate;
 
 namespace CellularSalon.Forms
 {
+    /// <summary>
+    /// Окно регистрации в приложении
+    /// </summary>
     public partial class RegisterForm : Form
     {
+        private Registration registatration = new Registration();
         public RegisterForm(Form form)
         {
             InitializeComponent();
@@ -22,7 +26,7 @@ namespace CellularSalon.Forms
 
         private void ParseFields(object sender, EventArgs e)
         {
-            _ = Registatration.ParseFields(nameBox.Text, passwordBox.Text, emailBox.Text) ? 
+            _ = registatration.ParseFields(nameBox.Text, passwordBox.Text, emailBox.Text) ? 
                 regButton.Enabled = true : regButton.Enabled = false;
         }
 
@@ -30,10 +34,10 @@ namespace CellularSalon.Forms
         {
             try
             {
-                if (!Validation.IsUserExist(emailBox.Text))
+                if (!Validation.IsUserExist(emailBox.Text, passwordBox.Text))
                 {
                     User employee = new User(emailBox.Text, passwordBox.Text, nameBox.Text, "Пользователь");
-                    if (Registatration.CreateUser(employee))
+                    if (registatration.CreateUser(employee))
                     {
                         MessageBox.Show("Вы успешно зарегистрировались!");
                         new MainForm(this, employee).Show();

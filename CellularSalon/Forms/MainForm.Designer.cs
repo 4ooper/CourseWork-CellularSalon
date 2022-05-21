@@ -46,39 +46,43 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Dock = System.Windows.Forms.DockStyle.Top;
-            this.label1.Font = new System.Drawing.Font("Times New Roman", 18F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.Font = new System.Drawing.Font("Yu Gothic UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
             this.label1.Location = new System.Drawing.Point(0, 0);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(583, 26);
+            this.label1.Size = new System.Drawing.Size(546, 30);
             this.label1.TabIndex = 0;
             this.label1.Text = "Учёт продаж салона сотовой связи на Windows Form";
             // 
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(6, 19);
+            this.pictureBox1.Location = new System.Drawing.Point(14, 19);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(70, 67);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox1.TabIndex = 1;
             this.pictureBox1.TabStop = false;
             // 
             // userName
             // 
             this.userName.AutoSize = true;
-            this.userName.Font = new System.Drawing.Font("Times New Roman", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userName.Location = new System.Drawing.Point(60, 19);
+            this.userName.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userName.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.userName.Location = new System.Drawing.Point(99, 19);
             this.userName.Name = "userName";
-            this.userName.Size = new System.Drawing.Size(50, 14);
+            this.userName.Size = new System.Drawing.Size(91, 25);
             this.userName.TabIndex = 2;
             this.userName.Text = "%name%";
             // 
             // userPosition
             // 
             this.userPosition.AutoSize = true;
-            this.userPosition.Font = new System.Drawing.Font("Times New Roman", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
-            this.userPosition.Location = new System.Drawing.Point(60, 52);
+            this.userPosition.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.userPosition.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.userPosition.Location = new System.Drawing.Point(99, 51);
             this.userPosition.Name = "userPosition";
-            this.userPosition.Size = new System.Drawing.Size(73, 15);
+            this.userPosition.Size = new System.Drawing.Size(112, 25);
             this.userPosition.TabIndex = 3;
             this.userPosition.Text = "%position%";
             // 
@@ -89,30 +93,36 @@
             this.authGroupBox.Controls.Add(this.pictureBox1);
             this.authGroupBox.Controls.Add(this.userPosition);
             this.authGroupBox.Controls.Add(this.userName);
-            this.authGroupBox.Location = new System.Drawing.Point(601, 38);
+            this.authGroupBox.Location = new System.Drawing.Point(599, 38);
             this.authGroupBox.Name = "authGroupBox";
-            this.authGroupBox.Size = new System.Drawing.Size(248, 81);
+            this.authGroupBox.Size = new System.Drawing.Size(250, 183);
             this.authGroupBox.TabIndex = 4;
             this.authGroupBox.TabStop = false;
             // 
             // adminPanelButton
             // 
-            this.adminPanelButton.Location = new System.Drawing.Point(152, 43);
+            this.adminPanelButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.adminPanelButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.adminPanelButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.adminPanelButton.Location = new System.Drawing.Point(114, 113);
             this.adminPanelButton.Name = "adminPanelButton";
-            this.adminPanelButton.Size = new System.Drawing.Size(89, 23);
+            this.adminPanelButton.Size = new System.Drawing.Size(130, 39);
             this.adminPanelButton.TabIndex = 5;
             this.adminPanelButton.Text = "Админ-панель";
-            this.adminPanelButton.UseVisualStyleBackColor = true;
+            this.adminPanelButton.UseVisualStyleBackColor = false;
             this.adminPanelButton.Click += new System.EventHandler(this.AdminPanelButton_Click);
             // 
             // logOutButton
             // 
-            this.logOutButton.Location = new System.Drawing.Point(187, 15);
+            this.logOutButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.logOutButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.logOutButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.logOutButton.Location = new System.Drawing.Point(14, 114);
             this.logOutButton.Name = "logOutButton";
-            this.logOutButton.Size = new System.Drawing.Size(55, 23);
+            this.logOutButton.Size = new System.Drawing.Size(90, 38);
             this.logOutButton.TabIndex = 4;
             this.logOutButton.Text = "Выйти";
-            this.logOutButton.UseVisualStyleBackColor = true;
+            this.logOutButton.UseVisualStyleBackColor = false;
             this.logOutButton.Click += new System.EventHandler(this.LogOutButton_Click);
             // 
             // mainPanel
@@ -125,18 +135,22 @@
             // 
             // closeButton
             // 
+            this.closeButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.closeButton.Font = new System.Drawing.Font("Yu Gothic UI", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.closeButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.closeButton.Location = new System.Drawing.Point(590, 430);
             this.closeButton.Name = "closeButton";
             this.closeButton.Size = new System.Drawing.Size(259, 64);
             this.closeButton.TabIndex = 6;
             this.closeButton.Text = "Завершить работу";
-            this.closeButton.UseVisualStyleBackColor = true;
+            this.closeButton.UseVisualStyleBackColor = false;
             this.closeButton.Click += new System.EventHandler(this.CloseButton_Click);
             // 
             // MainForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.ClientSize = new System.Drawing.Size(861, 507);
             this.Controls.Add(this.closeButton);
             this.Controls.Add(this.mainPanel);

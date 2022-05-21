@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models.PhoneClasses;
 using BLL.CarouselPicture;
+using Parser.Repositories;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер вывода информации о телефоне в админ-панеле
+    /// </summary>
     public partial class AboutPhoneControl : UserControl
     {
 
         private Phone phone;
+        private ParserSingleton instance = ParserSingleton.GetInstance();
         public AboutPhoneControl(Phone phone)
         {
             InitializeComponent();
@@ -35,7 +34,7 @@ namespace CellularSalon.AdminPanels
             simLabel.Text = phone.features.sim;
             cameraLabel.Text = phone.features.camera;
             pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[0])));
-            countLabel.Text = phone.count.ToString();
+            countLabel.Text = instance.stockParser.entities.Find(item => item.model == phone.name).count.ToString();
         }
 
         private void nextPicButton_Click(object sender, EventArgs e)

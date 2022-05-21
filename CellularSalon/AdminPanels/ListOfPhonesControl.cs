@@ -1,25 +1,20 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
-using System.Drawing;
-using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
+using CellularSalon.UIGenerator;
 using Models.PhoneClasses;
-using Parser;
-using BLL.UIGenerator;
-
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллер для отображения списка телефонов
+    /// </summary>
     public partial class ListOfPhonesControl : UserControl
     {
+        private UIGeneratorPhone UIGenerator;
         public ListOfPhonesControl()
         {
             InitializeComponent();
-            UIGenerator.AddPhones(this.panel1, aboutButton_Click, 5);
+            UIGenerator = new UIGeneratorPhone(this.panel1, aboutButton_Click, 5, 140, 230);
+            UIGenerator.Generate();
         }
 
         private void aboutButton_Click(object sender, EventArgs e)

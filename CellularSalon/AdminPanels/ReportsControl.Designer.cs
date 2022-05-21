@@ -32,11 +32,12 @@
             // 
             // ReportsControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.Margin = new System.Windows.Forms.Padding(0);
             this.Name = "ReportsControl";
-            this.Size = new System.Drawing.Size(764, 492);
+            this.Size = new System.Drawing.Size(1019, 606);
             this.ResumeLayout(false);
 
         }

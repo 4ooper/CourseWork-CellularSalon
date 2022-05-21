@@ -1,18 +1,1 @@
-[
-    {
-        "phoneName": "Xiaomi Redmi Note 11",
-        "clientEmail": "admin@mail.ru",
-        "employeeEmail": "saler@mail.ru",
-        "dateTime": "2022-05-05T20:10:13.1839315+03:00",
-        "linkToHtml": "..\\..\\..\\SaleReports\\Xiaomi Redmi Note 11 05.05.2022-183.html",
-        "price": 825
-    },
-    {
-        "phoneName": " Realme 8i",
-        "clientEmail": "test1@mail.ru",
-        "employeeEmail": "saler@mail.ru",
-        "dateTime": "2022-05-05T20:10:30.5058933+03:00",
-        "linkToHtml": "..\\..\\..\\SaleReports\\ Realme 8i 05.05.2022-505.html",
-        "price": 805
-    }
-]
+[{"phoneName":"Xiaomi Redmi Note 11","clientEmail":"admin@mail.ru","employeeEmail":"saler@mail.ru","dateTime":"2022-05-05T20:10:13.1839315+03:00","linkToHtml":"..\\..\\..\\SaleReports\\Xiaomi Redmi Note 11 05.05.2022-183.html","price":825},{"phoneName":"Realme 8i","clientEmail":"test1@mail.ru","employeeEmail":"saler@mail.ru","dateTime":"2022-05-05T20:10:30.5058933+03:00","linkToHtml":"..\\..\\..\\SaleReports\\Realme 8i 05.05.2022-505.html","price":805},{"phoneName":"APPLE iPhone 12 mini","clientEmail":"test1@mail.ru","employeeEmail":"admin@mail.ru","dateTime":"2022-05-09T11:15:05.4954074+03:00","linkToHtml":"..\\..\\..\\SaleReports\\APPLE iPhone 12 mini 09.05.2022-495.html","price":3450},{"phoneName":"APPLE iPhone 12 mini","clientEmail":"admin@mail.ru","employeeEmail":"admin@mail.ru","dateTime":"2022-05-10T19:38:08.2839084+03:00","linkToHtml":"..\\..\\..\\SaleReports\\APPLE iPhone 12 mini 10.05.2022-283.html","price":3450},{"phoneName":"APPLE iPhone 12 mini","clientEmail":"test1@mail.ru","employeeEmail":"admin@mail.ru","dateTime":"2022-05-10T19:38:21.7885582+03:00","linkToHtml":"..\\..\\..\\SaleReports\\APPLE iPhone 12 mini 10.05.2022-788.html","price":3450},{"phoneName":"APPLE iPhone SE","clientEmail":"test1@mail.ru","employeeEmail":"admin@mail.ru","dateTime":"2022-05-10T21:02:22.1225616+03:00","linkToHtml":"..\\..\\..\\SaleReports\\APPLE iPhone SE 10.05.2022-122.html","price":1980},{"phoneName":"vivo Y31","clientEmail":"test1@mail.ru","employeeEmail":"saler@mail.ru","dateTime":"2022-05-11T18:11:56.3372646+03:00","linkToHtml":"..\\..\\..\\SaleReports\\vivo Y31 11.05.2022-337.html","price":649},{"phoneName":"APPLE iPhone 12 mini","clientEmail":"test@mail.ru","employeeEmail":"admin@mail.ru","dateTime":"2022-05-11T21:11:46.8345021+03:00","linkToHtml":"..\\..\\..\\SaleReports\\APPLE iPhone 12 mini 11.05.2022-834.html","price":3300},{"phoneName":"Xiaomi Redmi Note 11 Pro+","clientEmail":"user@mail.ru","employeeEmail":"saler@mail.ru","dateTime":"2022-05-13T20:16:12.754378+03:00","linkToHtml":"..\\..\\..\\SaleReports\\Xiaomi Redmi Note 11 Pro+ 13.05.2022-754.html","price":1540},{"phoneName":"Xiaomi Redmi Note 11","clientEmail":"admin@mail.ru","employeeEmail":"admin@mail.ru","dateTime":"2022-05-21T09:49:20.0266491+03:00","linkToHtml":"..\\..\\..\\SaleReports\\Xiaomi Redmi Note 11 21.05.2022-26.html","price":825}]

@@ -37,48 +37,57 @@
             // findNameBox
             // 
             this.findNameBox.FormattingEnabled = true;
-            this.findNameBox.Location = new System.Drawing.Point(4, 4);
+            this.findNameBox.Location = new System.Drawing.Point(5, 5);
+            this.findNameBox.Margin = new System.Windows.Forms.Padding(4);
             this.findNameBox.Name = "findNameBox";
-            this.findNameBox.Size = new System.Drawing.Size(191, 21);
+            this.findNameBox.Size = new System.Drawing.Size(253, 24);
             this.findNameBox.TabIndex = 0;
             this.findNameBox.SelectedIndexChanged += new System.EventHandler(this.findNameBox_SelectedIndexChanged);
             // 
             // findemailBox
             // 
             this.findemailBox.FormattingEnabled = true;
-            this.findemailBox.Location = new System.Drawing.Point(4, 31);
+            this.findemailBox.Location = new System.Drawing.Point(5, 38);
+            this.findemailBox.Margin = new System.Windows.Forms.Padding(4);
             this.findemailBox.Name = "findemailBox";
-            this.findemailBox.Size = new System.Drawing.Size(191, 21);
+            this.findemailBox.Size = new System.Drawing.Size(253, 24);
             this.findemailBox.TabIndex = 1;
             // 
             // findButton
             // 
-            this.findButton.Location = new System.Drawing.Point(4, 59);
+            this.findButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(4)))), ((int)(((byte)(116)))));
+            this.findButton.Font = new System.Drawing.Font("Yu Gothic UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(204)));
+            this.findButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.findButton.Location = new System.Drawing.Point(5, 73);
+            this.findButton.Margin = new System.Windows.Forms.Padding(4);
             this.findButton.Name = "findButton";
-            this.findButton.Size = new System.Drawing.Size(191, 53);
+            this.findButton.Size = new System.Drawing.Size(255, 65);
             this.findButton.TabIndex = 2;
             this.findButton.Text = "Найти";
-            this.findButton.UseVisualStyleBackColor = true;
+            this.findButton.UseVisualStyleBackColor = false;
             this.findButton.Click += new System.EventHandler(this.findButton_Click);
             // 
             // panel1
             // 
-            this.panel1.Location = new System.Drawing.Point(202, 4);
+            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
+            this.panel1.Location = new System.Drawing.Point(269, 5);
+            this.panel1.Margin = new System.Windows.Forms.Padding(4);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(559, 485);
+            this.panel1.Size = new System.Drawing.Size(745, 597);
             this.panel1.TabIndex = 3;
             // 
             // FindUserControl
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.Control;
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(121)))), ((int)(((byte)(203)))), ((int)(((byte)(184)))));
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.findButton);
             this.Controls.Add(this.findemailBox);
             this.Controls.Add(this.findNameBox);
+            this.Margin = new System.Windows.Forms.Padding(4);
             this.Name = "FindUserControl";
-            this.Size = new System.Drawing.Size(764, 492);
+            this.Size = new System.Drawing.Size(1019, 606);
             this.ResumeLayout(false);
 
         }

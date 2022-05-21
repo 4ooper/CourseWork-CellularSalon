@@ -1,28 +1,28 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
 using System.Data;
-using System.Drawing;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
-using Parser;
+using Parser.Repositories;
 using Models.PhoneClasses;
 
 namespace CellularSalon.AdminPanels
 {
+    /// <summary>
+    /// Контроллера для поиска телефона по модели
+    /// </summary>
     public partial class FindPhoneControl : UserControl
     {
+        private ParserSingleton instance = ParserSingleton.GetInstance();
+
         public FindPhoneControl()
         {
             InitializeComponent();
-            namesBox.DataSource = PhoneParser.models;
+            namesBox.DataSource = instance.phoneParser.models;
         }
 
         private void findButton_Click(object sender, EventArgs e)
         {
-            Phone phone = PhoneParser.phones.Where(item => item.name == namesBox.Text).ToList()[0];
+            Phone phone = instance.phoneParser.entities.Where(item => item.name == namesBox.Text).ToList()[0];
             panel1.Controls.Clear();
             panel1.Controls.Add(new changePhoneDataControl(phone));
         }

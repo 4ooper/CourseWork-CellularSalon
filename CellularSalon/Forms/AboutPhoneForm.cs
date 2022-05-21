@@ -1,25 +1,26 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.ComponentModel;
-using System.Data;
 using System.Drawing;
 using System.IO;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows.Forms;
 using Models.PhoneClasses;
 using Models;
-using Parser;
-using BLL.AboutPhoneForm;
 using BLL.CarouselPicture;
+using BLL.Implementation;
+using Parser.Repositories;
 
 namespace CellularSalon.Forms
 {
+    /// <summary>
+    /// Окно приложение, показывающее основную информацию о телефоне
+    /// </summary>
     public partial class AboutPhoneForm : Form
     {
         private Phone phone;
         private User user;
+
+        private Sales sales = new Sales();
+
+        private ParserSingleton instance = ParserSingleton.GetInstance();
         public AboutPhoneForm(Form form, Phone item, User user = null)
         {
             InitializeComponent();
@@ -40,7 +41,7 @@ namespace CellularSalon.Forms
             simLabel.Text = phone.features.sim;
             cameraLabel.Text = phone.features.camera;
             pictureBox1.Image = Image.FromStream(new MemoryStream(File.ReadAllBytes(phone.normalPhotoURL[0])));
-            createSaleButton.Enabled = phone.count > 0 ? true : false;
+            createSaleButton.Enabled = instance.stockParser.entities.Find(item => item.model == phone.name).count > 0 ? true : false;
             if (createSaleButton.Enabled == false)
             {
                 createSaleButton.Text = "Товара нет в наличии!";
@@ -64,7 +65,7 @@ namespace CellularSalon.Forms
 
         private void createSaleButton_Click(object sender, EventArgs e)
         {
-            if (AboutPhoneBLL.CreateSale(user, phone))
+            if (sales.CreateSale(user, phone))
             {
                 new MainForm(this, user).Show();
             }
@@ -72,6 +73,11 @@ namespace CellularSalon.Forms
             {
                 new RegisterForm(this).Show();
             }
+        }
+
+        private void AboutPhoneForm_Load(object sender, EventArgs e)
+        {
+
         }
     }
 }
